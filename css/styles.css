@@ -1,0 +1,122 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #080705; /* Dark Background */
+    color: #fffffa; /* Ivory Text */
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: #fffffa; /* Ivory Text */
+}
+
+/* Form Styles */
+form {
+    background-color: #40434e; /* Gunmetal Background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #fffffa; /* Ivory Text */
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea,
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #702632; /* Deep Maroon Border */
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fffffa; /* Ivory Background */
+    color: #080705; /* Dark Charcoal Text */
+}
+
+button {
+    background-color: #702632; /* Deep Maroon Button */
+    color: #fffffa; /* Ivory Text */
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #912f40; /* Dark Red on Hover */
+}
+
+/* Progress Section */
+#progress {
+    background-color: #40434e; /* Gunmetal Background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#progress h2 {
+    color: #fffffa; /* Ivory Text */
+}
+
+#progress p {
+    font-weight: bold;
+    color: #fffffa; /* Ivory Text */
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #40434e; /* Gunmetal Background */
+    color: #fffffa; /* Ivory Text */
+}
+
+table, th, td {
+    border: 1px solid #702632; /* Deep Maroon Borders */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #702632; /* Deep Maroon Background for Header */
+    color: #fffffa; /* Ivory Text */
+}
+
+tr:nth-child(even) {
+    background-color: #080705; /* Dark Charcoal for Even Rows */
+}
+
+tr:hover {
+    background-color: #912f40; /* Dark Red on Hover */
+}
+
+/* Add More Email Fields Button */
+#addEmailField {
+    background-color: #40434e; /* Gunmetal Background */
+    color: #fffffa; /* Ivory Text */
+    border: 1px solid #702632; /* Deep Maroon Border */
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+#addEmailField:hover {
+    background-color: #702632; /* Deep Maroon on Hover */
+}
