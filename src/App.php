@@ -77,11 +77,21 @@ class App
     
     private function initializeDatabase()
     {
-        $dbConfig = $this->config['database']['connections']['mysql'];
+        $dbConfig = $this->config['database'];
+        $connectionName = $dbConfig['default'];
+        $connection = $dbConfig['connections'][$connectionName];
         
         try {
-            $dsn = "mysql:host={$dbConfig['host']};port={$dbConfig['port']};dbname={$dbConfig['database']};charset={$dbConfig['charset']}";
-            $this->db = new PDO($dsn, $dbConfig['username'], $dbConfig['password'], $dbConfig['options']);
+            if ($connection['driver'] === 'mysql') {
+                $dsn = "mysql:host={$connection['host']};port={$connection['port']};dbname={$connection['database']};charset={$connection['charset']}";
+                $this->db = new PDO($dsn, $connection['username'], $connection['password'], $connection['options']);
+            } elseif ($connection['driver'] === 'sqlite') {
+                $dsn = "sqlite:{$connection['database']}";
+                $this->db = new PDO($dsn, null, null, $connection['options']);
+                
+                // Enable foreign key constraints for SQLite
+                $this->db->exec('PRAGMA foreign_keys = ON');
+            }
         } catch (PDOException $e) {
             if ($this->config['app']['debug']) {
                 die("Database connection failed: " . $e->getMessage());

@@ -54,15 +54,16 @@ class DashboardController extends BaseController
         $activeCampaigns = $this->campaignModel->count('user_id = ? AND status = ?', [$userId, 'running']);
         
         // Total emails sent (this month)
-        $sql = "SELECT COUNT(*) FROM email_logs el 
+        $sql = "SELECT COUNT(*) as count FROM email_logs el 
                 JOIN campaigns c ON el.campaign_id = c.id 
-                WHERE c.user_id = ? AND el.created_at >= DATE_SUB(NOW(), INTERVAL 1 MONTH)";
-        $monthlyEmails = $this->campaignModel->queryFirst($sql, [$userId])['COUNT(*)'] ?? 0;
+                WHERE c.user_id = ? AND el.created_at >= datetime('now', '-1 month')";
+        $result = $this->campaignModel->queryFirst($sql, [$userId]);
+        $monthlyEmails = $result['count'] ?? 0;
         
         // Success rate
         $sql = "SELECT 
                     COUNT(*) as total,
-                    SUM(CASE WHEN status = 'sent' THEN 1 ELSE 0 END) as successful
+                    SUM(CASE WHEN el.status = 'sent' THEN 1 ELSE 0 END) as successful
                 FROM email_logs el 
                 JOIN campaigns c ON el.campaign_id = c.id 
                 WHERE c.user_id = ?";

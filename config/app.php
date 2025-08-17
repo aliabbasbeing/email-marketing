@@ -13,7 +13,7 @@ return [
     'environment' => 'development',
     
     // Base URL configuration
-    'base_url' => ($_SERVER['SERVER_NAME'] == 'localhost') 
+    'base_url' => (isset($_SERVER['SERVER_NAME']) && $_SERVER['SERVER_NAME'] == 'localhost') 
         ? 'http://localhost/e-marketing/'
         : 'https://aliabbas.pk/',
     
