@@ -30,9 +30,40 @@ A comprehensive, professional-grade email marketing solution built with pure PHP
 
 ## Installation
 
+### 🚀 One-Click Installation (New!)
+
+**Choose your installation method:**
+
+1. **Universal Installer** (Auto-detects environment): `http://yourdomain.com/install.php`
+2. **XAMPP Quick Setup** (Local development): `http://localhost/email-marketing/setup-xampp.php`  
+3. **cPanel Hosting Setup** (Shared hosting): `http://yourdomain.com/setup-cpanel.php`
+4. **Configuration Wizard** (Post-install setup): `http://yourdomain.com/config-wizard.php`
+
+### Quick Start
+
+**For XAMPP/Local:**
+```bash
+# 1. Extract to xampp/htdocs/email-marketing/
+# 2. Start Apache in XAMPP
+# 3. Visit: http://localhost/email-marketing/setup-xampp.php
+```
+
+**For cPanel/Hosting:**
+```bash
+# 1. Upload files to public_html/
+# 2. Create MySQL database in cPanel  
+# 3. Visit: http://yourdomain.com/setup-cpanel.php
+```
+
+**Default Login:** admin / admin123 ⚠️ *Change immediately after first login*
+
+📖 **[Complete Installation Guide](INSTALLATION.md)**
+
+### Manual Installation (Advanced)
+
 ### Requirements
 - PHP 7.4 or higher
-- MySQL 5.7 or MariaDB 10.2+
+- MySQL 5.7 or MariaDB 10.2+ (or SQLite for development)
 - Web server (Apache/Nginx)
 - Composer (for dependencies)
 
